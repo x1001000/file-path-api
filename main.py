@@ -18,7 +18,7 @@ app.add_middleware(
 async def list_files(
     directory: str = Query(..., description="Directory path to list files from"),
     recursive: bool = Query(False, description="Whether to list files recursively"),
-    include_dirs: bool = Query(False, description="Include directories in the result"),
+    include_dirs: bool = Query(True, description="Include directories in the result"),
     file_types: Optional[List[str]] = Query(None, description="List of file extensions to filter (e.g., ['.txt', '.py'])")
 ):
     """
